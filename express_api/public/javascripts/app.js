@@ -1,9 +1,9 @@
-var app = angular.module('flavorsaveur', ['ngRoute']);
+var app = angular.module('flavorsaveur', ['ngRoute', 'ngResource']);
 
 app.config(function ($routeProvider) {
   $routeProvider
-  .when('/', {
-    templateUrl: 'views/index.html',
-    controller: 'PiratesController'
+  .when('/ingredientsearch', {
+    templateUrl: 'views/ingredientsearch.html',
+    controller: 'MainController'
   })
 })

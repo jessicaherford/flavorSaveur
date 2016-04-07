@@ -3,14 +3,23 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
+* {
+  font-family: 'Lateef', cursive;
+}
+
 a {
   color: #00B7FF;
 }
 
-i, h1{
+i{
   display: inline;
 }
 
 i{
-  margin: 10px 15px 10px 15px;
+  margin: 15px 15px 10px 15px;
+}
+
+#mainHeader{
+  color: #AA1111;
+  display: inline;
 }
