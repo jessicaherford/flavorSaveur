@@ -15,21 +15,32 @@ app.controller('MainController', ['$scope', '$http', function ($scope, $http) {
 
 app.controller('IngredientController', ['$scope', '$http', 'getIngredients',  function($scope, $http, getIngredients){
   console.log(getIngredients);
-  getIngredients.getSome().then(function(payload){
-    console.log(payload);
-  })
+  var ingredientsMatched = [];
+
+  // getIngredients.getSome().then(function(payload){
+  //   console.log(payload.data);
+  //   return $scope.ingredients = payload.data;
+  // })
 
   // console.log(getIngredients.data);
 
-  // $scope.findIngredients = function(ingredientSearched){
-  //
-  //   console.log($scope.ingredientSearched);
+  $scope.findIngredients = function(ingredientSearched){
 
-  // working part
-  //   $scope.ingredientSearched = this.ingredientSearched;
-  //   // console.log("ingredientSearched: " + this.ingredientSearched);
-  //   var ingredientSearched = this.ingredientSearched;
-  //   console.log("^^^^^" + ingredientSearched + "^^^^^");
+    var ingredientSearched = this.ingredientSearched;
+    console.log("^^^^^" + ingredientSearched + "^^^^^");
+
+    getIngredients.getSome().then(function(payload){
+      console.log(payload.data);
+      $scope.matchedIngredients = [];
+      // console.log('Inside get some function ' + ingredientSearched);
+      if(payload.data[ingredientSearched]){
+        $scope.matchedIngredients.push(payload.data[ingredientSearched]);
+      }
+      console.log($scope.matchedIngredients);
+      return $scope.ingredients = payload.data;
+    })
+
+};
 
     // var pairedIngredients = [];
     // $http.get('../../json/ingredients.json').success(function(data){

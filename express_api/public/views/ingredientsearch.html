@@ -6,9 +6,11 @@
   <a class='button' id='findIngredient' ng-click='findIngredients()'>Find Ingredients!</a>
   </div>
 
-  <!-- <div ng-repeat='ingredient in pairedIngredients'>
-      {{ data[0].ingredientSearched }}
-  </div> -->
+  <ul ng-repeat='ingredient in matchedIngredients[0]'>
+      <li>{{ ingredient }} </li>
+  </ul>
+
+
 
 
 </div>
