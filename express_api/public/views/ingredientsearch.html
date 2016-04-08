@@ -15,9 +15,11 @@
 </div> -->
 <div id='matchedIngredientsOuterDiv'>
 <div ng-repeat="ingredient in matchedIngredients[0]" ng-if="$index % 3 == 0" class="row is-text-centered" id='matchedIngredients'>
+  <form>
   <div class="col-xs-4" id='singleColumn'><input type="checkbox" id="{{matchedIngredients[0][$index]}}"><label for="{{matchedIngredients[0][$index]}}">{{matchedIngredients[0][$index]}}</label></div>
-  <div class="col-xs-4" id='singleColumn'>{{matchedIngredients[0][$index + 1]}}</div>
-  <div class="col-xs-4" id='singleColumn'>{{matchedIngredients[0][$index + 2]}}</div>
+  <div class="col-xs-4" id='singleColumn'><input type="checkbox" id="{{matchedIngredients[0][$index+1]}}"><label for="{{matchedIngredients[0][$index + 1]}}">{{matchedIngredients[0][$index + 1]}}</label></div>
+  <div class="col-xs-4" id='singleColumn'><input type="checkbox" id="{{matchedIngredients[0][$index+2]}}"><label for="{{matchedIngredients[0][$index + 2]}}">{{matchedIngredients[0][$index + 2]}}</label></div>
+  </form>
 </div>
 </div>
 <!-- <div ng-repeat="product in products" ng-if="$index % 3 == 0" class="row">
