@@ -1,7 +1,11 @@
-app.factory('ingredients', function($http){
-        return {
-          list: function(callback){
-            $http.get('../json/ingredients.json').success(callback);
+app.service('getIngredients', ['$http', function($http){
+  console.log('In getIngredients Service!');
+
+    var getIngredients = {};
+
+    this.getSome = function(){
+      return $http.get('../../json/ingredients.json');
     }
-  };
-});
+  
+
+}])

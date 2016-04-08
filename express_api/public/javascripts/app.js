@@ -4,6 +4,6 @@ app.config(function ($routeProvider) {
   $routeProvider
   .when('/ingredientsearch', {
     templateUrl: 'views/ingredientsearch.html',
-    controller: 'MainController'
+    controller: 'IngredientController'
   })
 })

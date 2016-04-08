@@ -1,4 +1,14 @@
 <div class='is-text-centered' id='ingredientSearch'>
   <h2 class='title'>What ingredient would you like to find a pairing for?</h2>
-  <input type="text" id="ingredientInput"> 
+  <input type="text" class='is-text-centered' id="ingredientInput" ng-model='ingredientSearched'>
+  <div class='is-centered'>
+    <!-- {{ ingredientSearched}} -->
+  <a class='button' id='findIngredient' ng-click='findIngredients()'>Find Ingredients!</a>
+  </div>
+
+  <!-- <div ng-repeat='ingredient in pairedIngredients'>
+      {{ data[0].ingredientSearched }}
+  </div> -->
+
+
 </div>

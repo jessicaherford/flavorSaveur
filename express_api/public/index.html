@@ -1,16 +1,16 @@
 <!DOCTYPE html>
-<html>
+<html ng-app='flavorsaveur'>
   <head>
     <meta charset="utf-8">
     <title>Flavor Saveur</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.0.15/css/bulma.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-    <link href='https://fonts.googleapis.com/css?family=Lateef' rel='stylesheet' >
+    <link href='https://fonts.googleapis.com/css?family=Lateef' rel='stylesheet'>
     <link rel="stylesheet" href="stylesheets/style.css" type='text/css'>
 
   </head>
-  <body ng-app='flavorsaveur'>
+  <body ng-controller='MainController'>
     <header class='is-text-centered'>
     <i class="fa fa-cutlery"></i>
     <h1 id='mainHeader' class='title is-1'>Flavor Saveur</h1>
@@ -24,8 +24,9 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" charset="utf-8"></script>
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular-resource.min.js"></script>
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular-route.min.js"></script>
-  <script type="text/javascript" src="javascripts/app.js">
+  <script type="text/javascript" src="javascripts/app.js"></script>
+  <script type="text/javascript" src="javascripts/controllers/controllers.js"></script>
+  <script type="text/javascript" src="javascripts/services/services.js"></script>
 
-  </script>
   </body>
 </html>
