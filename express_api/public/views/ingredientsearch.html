@@ -6,11 +6,22 @@
   <a class='button' id='findIngredient' ng-click='findIngredients()'>Find Ingredients!</a>
   </div>
 
-  <ul ng-repeat='ingredient in matchedIngredients[0]'>
-      <li>{{ ingredient }} </li>
-  </ul>
-
-
-
-
 </div>
+
+<!-- <div class='is-text-centered'>
+<ul ng-repeat='ingredient in matchedIngredients[0]'>
+    <li>{{ ingredient }} </li>
+</ul>
+</div> -->
+
+<div ng-repeat="ingredient in matchedIngredients[0]" ng-if="$index % 3 == 0" class="row is-text-centered">
+  <div class="col-xs-4">{{matchedIngredients[0][$index]}}</div>
+  <div class="col-xs-4">{{matchedIngredients[0][$index + 1]}}</div>
+  <div class="col-xs-4">{{matchedIngredients[0][$index + 2]}}</div>
+</div>
+
+<!-- <div ng-repeat="product in products" ng-if="$index % 3 == 0" class="row">
+        <div class="col-xs-4">{{products[$index]}}</div>
+        <div class="col-xs-4">{{products[$index + 1]}}</div>
+        <div class="col-xs-4">{{products[$index + 2]}}</div>
+    </div> -->

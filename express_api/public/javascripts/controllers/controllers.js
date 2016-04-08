@@ -27,16 +27,13 @@ app.controller('IngredientController', ['$scope', '$http', 'getIngredients',  fu
   $scope.findIngredients = function(ingredientSearched){
 
     var ingredientSearched = this.ingredientSearched;
-    console.log("^^^^^" + ingredientSearched + "^^^^^");
 
     getIngredients.getSome().then(function(payload){
-      console.log(payload.data);
       $scope.matchedIngredients = [];
       // console.log('Inside get some function ' + ingredientSearched);
       if(payload.data[ingredientSearched]){
         $scope.matchedIngredients.push(payload.data[ingredientSearched]);
       }
-      console.log($scope.matchedIngredients);
       return $scope.ingredients = payload.data;
     })
 
