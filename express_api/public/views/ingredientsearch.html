@@ -2,28 +2,31 @@
   <h2 class='title'>What ingredient would you like to find a pairing for?</h2>
   <input type="text" class='is-text-centered' id="ingredientInput" ng-model='ingredientSearched'>
   <div class='is-centered'>
-    <!-- {{ ingredientSearched}} -->
   <a class='button' id='findIngredient' ng-click='findIngredients()'>Find Ingredients!</a>
   </div>
 
 </div>
 
-<!-- <div class='is-text-centered'>
-<ul ng-repeat='ingredient in matchedIngredients[0]'>
-    <li>{{ ingredient }} </li>
-</ul>
-</div> -->
-<div id='matchedIngredientsOuterDiv'>
+
+<div id='matchedIngredientsOuterDiv' class='is-text-centered'>
 <div ng-repeat="ingredient in matchedIngredients[0]" ng-if="$index % 3 == 0" class="row is-text-centered" id='matchedIngredients'>
   <form>
-  <div class="col-xs-4" id='singleColumn'><input type="checkbox" id="{{matchedIngredients[0][$index]}}"><label for="{{matchedIngredients[0][$index]}}">{{matchedIngredients[0][$index]}}</label></div>
+  <div class="col-xs-4" id='singleColumn'><input type="checkbox" id="{{matchedIngredients[0][$index]}}" ng-model="checked"><label for="{{matchedIngredients[0][$index]}}">{{matchedIngredients[0][$index]}}</label></div>
   <div class="col-xs-4" id='singleColumn'><input type="checkbox" id="{{matchedIngredients[0][$index+1]}}"><label for="{{matchedIngredients[0][$index + 1]}}">{{matchedIngredients[0][$index + 1]}}</label></div>
   <div class="col-xs-4" id='singleColumn'><input type="checkbox" id="{{matchedIngredients[0][$index+2]}}"><label for="{{matchedIngredients[0][$index + 2]}}">{{matchedIngredients[0][$index + 2]}}</label></div>
   </form>
 </div>
+
+
+
+
+
+
+
+  <!-- <label for="tester">TESTER</label>
+  <input type="checkbox" id="tester" ng-model="answers[item.questID]" ng-change="stateChanged(item.questID)" /> -->
+
+
+
+
 </div>
-<!-- <div ng-repeat="product in products" ng-if="$index % 3 == 0" class="row">
-        <div class="col-xs-4">{{products[$index]}}</div>
-        <div class="col-xs-4">{{products[$index + 1]}}</div>
-        <div class="col-xs-4">{{products[$index + 2]}}</div>
-    </div> -->

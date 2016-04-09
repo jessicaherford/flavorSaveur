@@ -13,7 +13,7 @@ app.controller('MainController', ['$scope', '$http', function ($scope, $http) {
 }])
 
 
-app.controller('IngredientController', ['$scope', '$http', 'getIngredients',  function($scope, $http, getIngredients){
+app.controller('IngredientController', ['$scope', '$http', 'getIngredients', function($scope, $http, getIngredients){
   console.log(getIngredients);
 
 
@@ -30,8 +30,25 @@ app.controller('IngredientController', ['$scope', '$http', 'getIngredients',  fu
       return $scope.ingredients = payload.data;
     })
 
+
+
 };
 
+
+  
+
+
+//    $scope.stateChanged = function (questId) {
+//      var array = [];
+//    if($scope.answers[questId]){ //If it is checked
+//        console.log("Checked");
+//        array.push($scope.answers[questId]);
+//    }
+//    else{
+//      console.log("Unchecked!");
+//    }
+//    console.log(array);
+// }
 
 
 
