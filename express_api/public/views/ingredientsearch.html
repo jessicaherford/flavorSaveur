@@ -11,18 +11,19 @@
 <div id='matchedIngredientsOuterDiv' class='is-text-centered'>
 <div ng-repeat="ingredient in matchedIngredients[0]" ng-if="$index % 3 == 0" class="row is-text-centered" id='matchedIngredients'>
   <form>
-  <div class="col-xs-4" id='singleColumn'><input type="checkbox" id="{{matchedIngredients[0][$index]}}" ng-model="checked"><label for="{{matchedIngredients[0][$index]}}">{{matchedIngredients[0][$index]}}</label></div>
+  <div class="col-xs-4" id='singleColumn'><input type="checkbox" checklist-model="selectedIngredients.ingredients" checklist-value="matchedIngredients[0][$index]" ng-click=check() id="{{matchedIngredients[0][$index]}}" ><label for="{{matchedIngredients[0][$index]}}">{{matchedIngredients[0][$index]}}</label></div>
   <div class="col-xs-4" id='singleColumn'><input type="checkbox" id="{{matchedIngredients[0][$index+1]}}"><label for="{{matchedIngredients[0][$index + 1]}}">{{matchedIngredients[0][$index + 1]}}</label></div>
   <div class="col-xs-4" id='singleColumn'><input type="checkbox" id="{{matchedIngredients[0][$index+2]}}"><label for="{{matchedIngredients[0][$index + 2]}}">{{matchedIngredients[0][$index + 2]}}</label></div>
   </form>
 </div>
 
+<label ng-repeat="role in roles" label-for="tester">
+  <br>
+    <input type="checkbox" checklist-model="user.roles" ng-click='check()' checklist-value="role.text" id="tester"> {{role.text}}
+    <br>
+  </label>
 
-
-
-
-
-
+  user.roles {{ user.roles | json }}
   <!-- <label for="tester">TESTER</label>
   <input type="checkbox" id="tester" ng-model="answers[item.questID]" ng-change="stateChanged(item.questID)" /> -->
 
