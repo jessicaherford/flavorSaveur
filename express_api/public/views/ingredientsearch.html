@@ -17,9 +17,18 @@
   </form>
 </div>
 
+<h1>Your Selected Ingredients:</h1>
+
+
+<div class="is-centered" id='selectedIngredientsDiv'>
+  <ul ng-repeat="ingredient in selectedIngredients.ingredients" ng-if="$index % 2 == 0" class="row is-text-centered">
+    <li class="col-md-6">{{selectedIngredients.ingredients[$index]}}</li>
+    <li class="col-md-6">{{selectedIngredients.ingredients[$index+1]}}</li>
+  </ul>
 
 </div>
+</div>
 
-<div class="is-text-centered">
-<a class='button' ng-click='food2forkCall()'>Find Recipes!</a>
+<div class="is-text-centered ">
+  <a class='button' ng-click='food2forkCall()'>Find Recipes!</a>
 </div>

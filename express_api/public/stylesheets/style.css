@@ -71,3 +71,7 @@ input[type="checkbox"]:checked + label {
   border: groove 2px;
   border-color: #000;
 }
+
+#selectedIngredientsDiv{
+  font-size: 20px;
+}

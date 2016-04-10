@@ -13,13 +13,13 @@ app.service('getIngredients', ['$http', function($http){
 
 
 
-// app.service('food2forkAjaxCall', ['$http', function($http){
-//     var theData = {};
-//
-//     this.theData = function(){
-//     return $http.get('http://api.bigoven.com/recipes');
-//     }
-//
-//     console.log(theData.data);
-//
-// }])
+app.service('food2forkAjaxCall', ['$http', function($http){
+    var theData = {};
+    console.log("Service Food2Fork Call Happens Here!");
+    // this.theData = function(){
+    // return $http.get('http://food2fork.com/api/search?key=');
+    // }
+    //
+    // console.log(theData.data);
+
+}])

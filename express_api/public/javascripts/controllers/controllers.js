@@ -13,7 +13,7 @@ app.controller('MainController', ['$scope', '$http', function ($scope, $http) {
 }])
 
 
-app.controller('IngredientController', ['$scope', '$http', 'getIngredients', function($scope, $http, getIngredients){
+app.controller('IngredientController', ['$scope', '$http', 'getIngredients', 'food2forkAjaxCall', function($scope, $http, getIngredients, food2forkAjaxCall){
   // console.log(getIngredients);
 
 
@@ -39,10 +39,9 @@ $scope.selectedIngredients = {
   ingredients: []
 }
 
-$scope.searchedIngredientPush = function(){
-  var ingredientSearched = this.ingredientSearched;
-  console.log("ACCESSED ingredient SEarched");
-}
+// $scope.searchedIngredientPush = function(){
+//   var ingredientSearched = this.ingredientSearched;
+// }
 
 
 $scope.check = function(value, checked) {
@@ -61,9 +60,9 @@ $scope.food2forkCall = function(){
 
   console.log("Inside Food To Fork Call");
 
-  food2forkAjaxCall.theData().then(function(payload){
-    console.log(payload);
-  })
+  // food2forkAjaxCall.theData().then(function(payload){
+  //   console.log(payload);
+  // })
 
 }
 
