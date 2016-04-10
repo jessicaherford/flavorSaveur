@@ -13,7 +13,7 @@ app.controller('MainController', ['$scope', '$http', function ($scope, $http) {
 }])
 
 
-app.controller('IngredientController', ['$scope', '$http', 'getIngredients', 'food2forkAjaxCall',  function($scope, $http, getIngredients, food2forkAjaxCall){
+app.controller('IngredientController', ['$scope', '$http', 'getIngredients', function($scope, $http, getIngredients){
   // console.log(getIngredients);
 
 
