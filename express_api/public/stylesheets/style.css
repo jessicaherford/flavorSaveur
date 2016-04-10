@@ -39,7 +39,7 @@ i{
   margin-top: 10px;
 }
 
-#matchedIngredientsDiv{
+#matchedIngredientsDiv, #matchedIngredientsOuterDiv{
   margin: 40px;
 }
 
@@ -61,7 +61,7 @@ input[type="checkbox"] + label {
   border-radius: 5px;
   padding: 5px;
   width: 160px;
-  font-size: 20px;
+  font-size: 26px;
 }
 
 
