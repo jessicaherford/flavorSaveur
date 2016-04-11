@@ -1,14 +1,4 @@
 app.controller('MainController', ['$scope', '$http', function ($scope, $http) {
-  // $scope.ingredientThing;
-  // console.log($scope.ingredientThing);
-  // console.log('******' + ingredientThing );
-  // $scope.data = $http.get('../../json/ingredients.json').success(function(data){
-  //   return $scope.ingredients;
-
-    // console.log($scope.ingredientThing);
-
-  // })
-  // console.log(data[0]);
 
 }])
 
@@ -16,11 +6,9 @@ app.controller('MainController', ['$scope', '$http', function ($scope, $http) {
 app.controller('IngredientController', ['$scope', '$http', 'getIngredients', 'food2forkAjaxCall', function($scope, $http, getIngredients, food2forkAjaxCall){
   // console.log(getIngredients);
 
-
   $scope.findIngredients = function(ingredientSearched){
 
     $scope.selectedIngredients.ingredients.length = 0;
-
 
     var ingredientSearched = this.ingredientSearched;
 
@@ -32,16 +20,9 @@ app.controller('IngredientController', ['$scope', '$http', 'getIngredients', 'fo
       }
       return $scope.ingredients = payload.data;
     })
+
     $scope.selectedIngredients.ingredients.push(ingredientSearched);
 }
-
-$scope.selectedIngredients = {
-  ingredients: []
-}
-
-// $scope.searchedIngredientPush = function(){
-//   var ingredientSearched = this.ingredientSearched;
-// }
 
 
 $scope.check = function(value, checked) {
@@ -55,18 +36,32 @@ $scope.check = function(value, checked) {
   console.log($scope.selectedIngredients.ingredients);
 };
 
-
-$scope.food2forkCall = function(){
-
-  console.log("Inside Food To Fork Call");
-
-  // food2forkAjaxCall.theData().then(function(payload){
-  //   console.log(payload);
-  // })
-
+return $scope.selectedIngredients = {
+  ingredients: []
 }
 
+food2forkAjaxCall.getData().then(function(results){
 
+  console.log(results);
+
+
+})
+
+
+
+
+
+}])
+
+app.controller('RecipeController', ['$scope', '$http', 'food2forkAjaxCall', function($scope, $http, food2forkAjaxCall){
+
+// console.log($scope.selectedIngredients.ingredients);
+
+// food2forkAjaxCall.getData().then(function(payload){
+//   console.log(payload.data.recipes);
+//
+//   console.log($scope.selectedIngredients.ingredients);
+// })
 
 
 
