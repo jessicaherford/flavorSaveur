@@ -47,15 +47,43 @@ $scope.ajaxCall = function(){
   var userIngredients = $scope.selectedIngredients.ingredients;
   console.log(userIngredients);
 
+  //loop through all data and return each object
+  //inside for loop through user ingredients
+  // for(i=0;i<userIngredients.length; i++){
+  //     console.log(userIngredients[i]);
+  // }
+
   food2forkAjaxCall.getData(userIngredients).then(function(results){
+
     // console.log(results.data.recipes);
+
+    // looping through userIngredients Array
+
+    // for(i=0;i<userIngredients.length; i++){
+    //     console.log(userIngredients[i]);
+    // }
+
     for(i=0; i<results.data.recipes.length; i++){
-      if(results.data.recipes[i].title.includes(userIngredients)){
-      console.log(results.data.recipes[i].title);
-    }
+        userIngredients.forEach(function(userIngredients, i){
+          if(results.data.recipes[i].title.includes(userIngredients, i)){
+          console.log("***********");
+          console.log(results.data.recipes[i].title);
+        }
+        })
+      //if(function ingredient macthes) put logic in here
+
+    //   if(results.data.recipes[i].title.includes(userIngredients)){
+    //   console.log("***********");
+    //   console.log(results.data.recipes[i].title);
+    // }
     }
   })
 }
+
+// code
+// function ingredientMatches(str, ingredients){
+// return true if an ingredient is in str
+//}
 
 
 }])
