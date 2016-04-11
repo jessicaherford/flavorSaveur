@@ -6,4 +6,8 @@ app.config(function ($routeProvider) {
     templateUrl: 'views/ingredientsearch.html',
     controller: 'IngredientController'
   })
+  .when('/findrecipes', {
+    templateUrl: 'views/findrecipes.html',
+    controller: 'RecipeController'
+  })
 })

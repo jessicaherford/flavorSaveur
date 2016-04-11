@@ -75,3 +75,8 @@ input[type="checkbox"]:checked + label {
 #selectedIngredientsDiv{
   font-size: 20px;
 }
+
+
+li{
+  display: inline;
+}
