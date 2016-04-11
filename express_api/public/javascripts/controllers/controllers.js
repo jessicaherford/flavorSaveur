@@ -7,12 +7,13 @@ app.controller('IngredientController', ['$scope', '$http', 'getIngredients', 'fo
   // console.log(getIngredients);
 
   $scope.findIngredients = function(ingredientSearched){
-
+    // alert("Clicked Find Ingrediets!")
     $scope.selectedIngredients.ingredients.length = 0;
 
     var ingredientSearched = this.ingredientSearched;
 
     getIngredients.getSome().then(function(payload){
+      console.log(payload);
       $scope.matchedIngredients = [];
 
       if(payload.data[ingredientSearched]){
@@ -36,16 +37,25 @@ $scope.check = function(value, checked) {
   console.log($scope.selectedIngredients.ingredients);
 };
 
-return $scope.selectedIngredients = {
+
+$scope.selectedIngredients = {
   ingredients: []
 }
 
-food2forkAjaxCall.getData().then(function(results){
 
-  console.log(results);
+$scope.ajaxCall = function(){
+  // data: {
+  //     q: searchedValue
+  //   },
 
+  food2forkAjaxCall.getData().then(function(results){
+    // console.log(results.data.recipes);
+    for(i=0; i<results.data.recipes.length; i++){
+      console.log(results.data.recipes[i].title);
+    }
+  })
+}
 
-})
 
 
 
@@ -53,16 +63,17 @@ food2forkAjaxCall.getData().then(function(results){
 
 }])
 
-app.controller('RecipeController', ['$scope', '$http', 'food2forkAjaxCall', function($scope, $http, food2forkAjaxCall){
-
-// console.log($scope.selectedIngredients.ingredients);
-
-// food2forkAjaxCall.getData().then(function(payload){
-//   console.log(payload.data.recipes);
+// app.controller('RecipeController', ['$scope', '$http', 'food2forkAjaxCall', function($scope, $http, food2forkAjaxCall){
 //
-//   console.log($scope.selectedIngredients.ingredients);
+// // console.log($scope.selectedIngredients.ingredients);
+//
+// food2forkAjaxCall.getData().then(function(payload){
+//   console.log("Call Made!");
+//   // console.log(payload.data.recipes);
+//
+//   // console.log($scope.selectedIngredients.ingredients);
 // })
 
 
-
-}])
+//
+// }])
