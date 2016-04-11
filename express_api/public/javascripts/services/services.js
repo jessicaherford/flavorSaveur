@@ -13,13 +13,15 @@ app.service('getIngredients', ['$http', function($http){
 
 
 app.service('food2forkAjaxCall', ['$http', function($http){
-    console.log("Inside food2forkAjaxCall Service");
 
     var food2forkAjaxCall = {};
 
-    this.getData = function(data){
-      return $http.get('../../json/food2forkdatasample.json')
+    this.getData = function(data, userIngredients){
+
+      return $http.get('../../json/food2forkdatasample.json');
       // return $http.get('http://food2fork.com/api/search?key=');
     }
 
 }])
+
+//Trying to pass all contents of $scope.selectedIngredients into search parameters
