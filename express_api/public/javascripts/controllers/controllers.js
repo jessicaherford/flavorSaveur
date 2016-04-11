@@ -3,16 +3,17 @@ app.controller('MainController', ['$scope', '$http', function ($scope, $http) {
 }])
 
 
-app.controller('IngredientController', ['$scope', '$http', 'getIngredients', function($scope, $http, getIngredients){
+app.controller('IngredientController', ['$scope', '$http', 'getIngredients', 'food2forkAjaxCall',  function($scope, $http, getIngredients, food2forkAjaxCall){
   // console.log(getIngredients);
 
   $scope.findIngredients = function(ingredientSearched){
-
+    // alert("Clicked Find Ingrediets!")
     $scope.selectedIngredients.ingredients.length = 0;
 
     var ingredientSearched = this.ingredientSearched;
 
     getIngredients.getSome().then(function(payload){
+      // console.log(payload);
       $scope.matchedIngredients = [];
 
       if(payload.data[ingredientSearched]){
@@ -36,22 +37,25 @@ $scope.check = function(value, checked) {
   console.log($scope.selectedIngredients.ingredients);
 };
 
-return $scope.selectedIngredients = {
+$scope.selectedIngredients = {
   ingredients: []
 }
 
-}])
 
-app.controller('RecipeController', ['$scope', '$http', 'food2forkAjaxCall', 'findRecipes', function($scope, $http, food2forkAjaxCall, findRecipes){
 
-// console.log($scope.selectedIngredients.ingredients);
 
-// food2forkAjaxCall.getData().then(function(payload){
-//   console.log(payload.data.recipes);
-//
-//   console.log($scope.selectedIngredients.ingredients);
-// })
-
+$scope.ajaxCall = function(){
+  var userIngredients = $scope.selectedIngredients.ingredients;
+  console.log(userIngredients);
+  food2forkAjaxCall.getData(userIngredients).then(function(results){
+    // console.log(results.data.recipes);
+    for(i=0; i<results.data.recipes.length; i++){
+      if(results.data.recipes[i].title.includes(userIngredients)){
+      console.log(results.data.recipes[i].title);
+    }
+    }
+  })
+}
 
 
 }])

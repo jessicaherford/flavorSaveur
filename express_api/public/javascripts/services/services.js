@@ -12,38 +12,15 @@ app.service('getIngredients', ['$http', function($http){
 
 
 
-
-
-
-
-app.service('findRecipes', ['$http', function($http){
-
-
-console.log("FIND RECIPES SERVICE");
-
-
-
-
-}])
-
-
-
-
-
-
-
-
 app.service('food2forkAjaxCall', ['$http', function($http){
-    console.log("Don't know if I need this service?");
 
     var food2forkAjaxCall = {};
 
-    this.getData = function(){
-      console.log("not calling");
-      // return $http.get('http://food2fork.com/api/search?');
+    this.getData = function(data, userIngredients){
 
+      return $http.get('../../json/food2forkdatasample.json');
+      // return $http.get('http://food2fork.com/api/search?key=');
     }
-
-
-
 }])
+
+//Trying to pass all contents of $scope.selectedIngredients into search parameters
