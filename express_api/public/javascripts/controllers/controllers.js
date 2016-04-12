@@ -11,7 +11,9 @@ app.controller('IngredientController', ['$scope', '$http', 'getIngredients', 'fo
     $scope.selectedIngredients.ingredients.length = 0;
 
     var ingredientSearched = this.ingredientSearched;
-
+    console.log(ingredientSearched);
+    ingredientSearched = ingredientSearched.charAt(0).toUpperCase() + ingredientSearched.slice(1);
+    console.log(ingredientSearched);
     getIngredients.getSome().then(function(payload){
       // console.log(payload);
       $scope.matchedIngredients = [];
