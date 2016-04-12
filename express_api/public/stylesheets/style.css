@@ -80,8 +80,10 @@ li{
   display: inline;
 }
 
-#recipeLink{
-
+#recipesDiv{
+  /*height: 250px;
+  width: 250px;*/
+  background-color: #EBEBEB;
 }
 
 img{
