@@ -34,3 +34,13 @@
 <div class="is-text-centered">
   <a class='button' id='ajaxCall' ng-click='ajaxCall()'>Find Recipes!</a>
 </div>
+
+<div id="recipesDiv" class='row is-text-centered' ng-repeat='recipe in data' ng-if="$index % 2 == 0" >
+  <p class='is-text-centered'>{{recipe.title}}</p>
+  <!-- <a href="recipe.source_url">{{recipe.title}}</a> -->
+  <!-- <p class='col-xs-3 text-center'> {{recipe.title[$index]}} </p>
+  <p class='col-xs-3'> {{recipe.title[$index+1]}} </p>
+  <p class='col-xs-3'> {{recipe.title[$index+2]}} </p>
+  <p class='col-xs-3'> {{recipe.title[$index+3]}} </p> -->
+
+</div>

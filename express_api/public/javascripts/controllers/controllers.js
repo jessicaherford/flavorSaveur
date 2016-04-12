@@ -50,8 +50,7 @@ $scope.ajaxCall = function(){
 
   food2forkAjaxCall.getData(userIngredients).then(function(results){
 
-    console.log(results);
-    // console.log(results.data.recipes);
+    $scope.data = results.data.recipes;
 
     // looping through userIngredients Array
 
@@ -68,9 +67,8 @@ $scope.ajaxCall = function(){
         })
         return userIngredients.length === filteredIngredients.length;
     })
-    console.log(testResults);
-
-
+    // console.log(testResults);
+    return $scope.data;
 
     // for(i=0; i<results.data.recipes.length; i++){
     //     // userIngredients.forEach(function(userIngredients, i){

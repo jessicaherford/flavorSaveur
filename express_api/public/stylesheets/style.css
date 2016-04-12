@@ -51,7 +51,6 @@ i{
 
 input[type="checkbox"] {
   display: none;
-
 }
 
 input[type="checkbox"] + label {
@@ -79,4 +78,8 @@ input[type="checkbox"]:checked + label {
 
 li{
   display: inline;
+}
+
+#recipeLink{
+  
 }
