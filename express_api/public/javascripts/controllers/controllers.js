@@ -50,6 +50,7 @@ $scope.ajaxCall = function(){
 
   food2forkAjaxCall.getData(userIngredients).then(function(results){
 
+    console.log(results);
     // console.log(results.data.recipes);
 
     // looping through userIngredients Array
@@ -58,27 +59,40 @@ $scope.ajaxCall = function(){
     //     console.log(userIngredients[i]);
     // }
 
-    for(i=0; i<results.data.recipes.length; i++){
-        userIngredients.forEach(function(userIngredients, i){
-          if(results.data.recipes[i].title.includes(userIngredients, i)){
-          console.log("***********");
-          console.log(results.data.recipes[i].title);
-        }
+    var testResults = results.data.recipes.filter(function(item){
+        var filteredIngredients = userIngredients.filter(function(ingredient){
+          if(item.title.toLowerCase().includes(ingredient.toLowerCase())){
+            return true;
+          }
+            return false;
         })
-      //if(function ingredient macthes) put logic in here
+        return userIngredients.length === filteredIngredients.length;
+    })
+    console.log(testResults);
 
-    //   if(results.data.recipes[i].title.includes(userIngredients)){
-    //   console.log("***********");
-    //   console.log(results.data.recipes[i].title);
+
+
+    // for(i=0; i<results.data.recipes.length; i++){
+    //     // userIngredients.forEach(function(userIngredients, i){
+    //     //   console.log(userIngredients);
+    //     //   if(results.data.recipes[i].title.includes(userIngredients)){
+    //     //   console.log("***********");
+    //     //   console.log(results.data.recipes[i].title);
+    //     // }
+    //     // })
+    //
+    //   //if(function ingredient macthes) put logic in here
+    //
+    // //   if(results.data.recipes[i].title.includes(userIngredients)){
+    // //   console.log("***********");
+    // //   console.log(results.data.recipes[i].title);
+    // // }
     // }
-    }
   })
 }
+}])
 
 // code
 // function ingredientMatches(str, ingredients){
 // return true if an ingredient is in str
 //}
-
-
-}])
