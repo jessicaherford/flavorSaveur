@@ -7,7 +7,7 @@ app.controller('IngredientController', ['$scope', '$http', 'getIngredients', 'fo
   // console.log(getIngredients);
 
   $scope.findIngredients = function(ingredientSearched){
-    // alert("Clicked Find Ingrediets!")
+
     $scope.selectedIngredients.ingredients.length = 0;
 
     var ingredientSearched = this.ingredientSearched;
