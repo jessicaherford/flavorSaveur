@@ -81,12 +81,12 @@ li{
 }
 
 #recipesDiv{
-  /*height: 250px;
-  width: 250px;*/
+  /*height: 250px;*/
   background-color: #EBEBEB;
 }
 
 img{
   height: 200px;
   width: 200px;
+  border-radius: 5px;
 }

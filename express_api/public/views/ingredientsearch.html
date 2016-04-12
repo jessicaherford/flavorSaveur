@@ -35,10 +35,12 @@
   <a class='button' id='ajaxCall' ng-click='ajaxCall()'>Find Recipes!</a>
 </div>
 
-<div class='row is-text-centered' ng-repeat='recipe in data' ng-if="$index % 3 == 0" >
+<div class='is-text-centered'  ng-repeat='recipe in data'>
   <div id="recipesDiv">
   <p class='is-text-centered'>{{recipe.title}}</p>
-  <img src={{recipe.image_url}}>
+  <a target="_blank" href={{recipe.source_url}}><img src={{recipe.image_url}}></a>
+  <!-- <a target="_blank" href={{recipe.source_url}}><img src={{recipe.image_url}}></a> -->
+  </div>
   </div>
 
   <!-- <a href="recipe.source_url">{{recipe.title}}</a> -->
