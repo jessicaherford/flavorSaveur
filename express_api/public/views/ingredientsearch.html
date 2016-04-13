@@ -1,6 +1,6 @@
 <div class='is-text-centered' id='ingredientSearch'>
   <h2 class='title'>What ingredient would you like to find a pairing for?</h2>
-  <input type="text" class='is-text-centered' id="ingredientInput" ng-model='ingredientSearched' ng-enter='findIngredients()' ng-required="required" placeholder="Chicken">
+  <input type="text" class='input is-large is-centered is-text-centered' id="ingredientInput" ng-model='ingredientSearched' ng-enter='findIngredients()' ng-required="required" placeholder="Chicken">
   <div class='is-centered'>
   <a class='button' id='findIngredient' ng-click='findIngredients()'>Find Ingredients!</a>
   </div>
@@ -21,30 +21,29 @@
 
 
 <div class="is-centered" id='selectedIngredientsDiv'>
-  <ul ng-repeat="ingredient in selectedIngredients.ingredients" ng-if="$index % 2 == 0" class="row is-text-centered">
-    <li class="col-md-3"></li>
-    <li class="col-md-3 text-center">{{selectedIngredients.ingredients[$index]}}</li>
-    <li class="col-md-3 text-center">{{selectedIngredients.ingredients[$index+1]}}</li>
-    <li class="col-md-3"></li>
+  <ul id="selectedIngredients" ng-repeat="ingredient in selectedIngredients.ingredients" ng-if="$index % 2 == 0" class="row is-text-centered">
+    <li class="col-md-4"></li>
+    <li class="col-xs-2 text-center" id='selectedIngredient'>{{selectedIngredients.ingredients[$index]}}</li>
+    <li class="col-xs-2 text-center" id='selectedIngredient'>{{selectedIngredients.ingredients[$index+1]}}</li>
+    <li class="col-md-4"></li>
   </ul>
 
 </div>
-</div>
+
 
 <div class="is-text-centered">
   <a class='button' id='ajaxCall' ng-click='ajaxCall()'>Find Recipes!</a>
 </div>
 
-<div class='is-text-centered'  ng-repeat='recipe in data'>
-  <div id="recipesDiv">
-  <p class='is-text-centered'>{{recipe.title}}</p>
-  <a target="_blank" href={{recipe.source_url}}><img src={{recipe.image_url}}></a>
-  <!-- <a target="_blank" href={{recipe.source_url}}><img src={{recipe.image_url}}></a> -->
-  </div>
-  </div>
+</div>
 
-  <!-- <a href="recipe.source_url">{{recipe.title}}</a> -->
-  <!-- <p class='col-xs-3 text-center'> {{recipe.title[$index]}} </p>
-  <!- -->
+<ul class="grid is-text-centered" masonry="true">
+    <li ng-repeat="recipe in data" class='grid-item' id='recipesDiv'>
+        <span id='recipeTitle'>{{recipe.title}}</span>
+        <a target="_blank" href={{recipe.source_url}}><img src={{recipe.image_url}}></a>
+    </li>
+</ul>
+
+
 
 </div>
