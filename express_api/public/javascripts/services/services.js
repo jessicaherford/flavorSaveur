@@ -16,8 +16,6 @@ app.service('food2forkAjaxCall', ['$http', function($http){
 
     var food2forkAjaxCall = {};
 
-    //NEED TO FIX THIS!!! DOES NOT WORK ON FIREBASE
-
     this.getData = function(userIngredients){
       userIngredients= userIngredients.join(', ')
       return $http.get('http://food2fork.com/api/search?key=c24b2377e69e34d6b450d0b43e35c9e0&q=' + userIngredients);
@@ -26,5 +24,3 @@ app.service('food2forkAjaxCall', ['$http', function($http){
 
 
 }])
-
-//Trying to pass all contents of $scope.selectedIngredients into search parameters
