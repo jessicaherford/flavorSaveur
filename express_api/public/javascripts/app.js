@@ -24,5 +24,3 @@ app.config(function ($routeProvider) {
     controller: 'RecipeController'
   })
 })
-
-heroku apps:rename newname --app oldname
