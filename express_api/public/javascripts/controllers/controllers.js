@@ -45,52 +45,16 @@ $scope.selectedIngredients = {
 
 
 $scope.ajaxCall = function(){
+  console.log('bing bong');
   var userIngredients = $scope.selectedIngredients.ingredients;
   console.log(userIngredients);
 
-  food2forkAjaxCall.getData(userIngredients).then(function(results){
+  food2forkAjaxCall.getData(userIngredients).then(function(response){
+    var recipes = JSON.parse(response.data).recipes
+    $scope.data = recipes;
+  });
 
-    $scope.data = results.data.recipes;
 
-    // looping through userIngredients Array
 
-    // for(i=0;i<userIngredients.length; i++){
-    //     console.log(userIngredients[i]);
-    // }
-
-    var testResults = results.data.recipes.filter(function(item){
-        var filteredIngredients = userIngredients.filter(function(ingredient){
-          if(item.title.toLowerCase().includes(ingredient.toLowerCase())){
-            return true;
-          }
-            return false;
-        })
-        return userIngredients.length === filteredIngredients.length;
-    })
-    // console.log(testResults);
-    return $scope.data;
-
-    // for(i=0; i<results.data.recipes.length; i++){
-    //     // userIngredients.forEach(function(userIngredients, i){
-    //     //   console.log(userIngredients);
-    //     //   if(results.data.recipes[i].title.includes(userIngredients)){
-    //     //   console.log("***********");
-    //     //   console.log(results.data.recipes[i].title);
-    //     // }
-    //     // })
-    //
-    //   //if(function ingredient macthes) put logic in here
-    //
-    // //   if(results.data.recipes[i].title.includes(userIngredients)){
-    // //   console.log("***********");
-    // //   console.log(results.data.recipes[i].title);
-    // // }
-    // }
-  })
 }
 }])
-
-// code
-// function ingredientMatches(str, ingredients){
-// return true if an ingredient is in str
-//}
