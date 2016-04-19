@@ -1,5 +1,4 @@
 app.service('getIngredients', ['$http', function($http){
-  // console.log('In getIngredients Service!');
 
     var getIngredients = {};
 

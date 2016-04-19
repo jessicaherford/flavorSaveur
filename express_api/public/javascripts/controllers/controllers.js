@@ -45,7 +45,6 @@ $scope.selectedIngredients = {
 
 
 $scope.ajaxCall = function(){
-  console.log('bing bong');
   var userIngredients = $scope.selectedIngredients.ingredients;
   console.log(userIngredients);
 
