@@ -82,14 +82,23 @@ i{
 
 #matchedIngredients{
   margin: 10px auto;
+  display: block;
+  width: 100%;
+}
+
+#matchedIngredientsOuterDiv{
   width: auto;
+  margin: 10px auto;
 }
 
 #singleColumn{
-  margin: 10px auto;
-  width: inherit;
+  margin: 0px;
 }
 
+.formClass{
+  margin: 0px auto;
+  width: 100%;
+}
 
 /*checkbox selector css*/
 
@@ -103,7 +112,7 @@ input[type="checkbox"] + label {
   border-color: #000;
   border-radius: 5px;
   padding: 5px;
-  width: 170px;
+  width: 200px;
   font-size: 26px;
 }
 
@@ -141,7 +150,7 @@ li{
   /*width: 200px;*/
   /* border: groove 2px;
   border-color: #1A1A1A; */
-  vertical-align: middle;;
+  vertical-align: middle;
   width: 350px;
 }
 

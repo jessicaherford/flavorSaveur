@@ -10,14 +10,14 @@
 
 <div id='matchedIngredientsOuterDiv' class='is-text-centered'>
 <div ng-repeat="ingredient in matchedIngredients[0]" ng-if="$index % 5 == 0" class="row is-text-centered" id='matchedIngredients'>
-  <form>
-  <div class="col-xs-2"></div>
+  <form class='formClass'>
+  <div class="col-xs-1" id='singleColumn'></div>
   <div class="col-xs-2" id='singleColumn' ng-show="matchedIngredients[0][$index] != null"><input type="checkbox" checklist-model="selectedIngredients.ingredients" checklist-value="matchedIngredients[0][$index]" ng-click=check() id="{{matchedIngredients[0][$index]}}" ><label for="{{matchedIngredients[0][$index]}}">{{matchedIngredients[0][$index]}}</label></div>
   <div class="col-xs-2" id='singleColumn' ng-show="matchedIngredients[0][$index+1] != null"><input type="checkbox" checklist-model="selectedIngredients.ingredients" checklist-value="matchedIngredients[0][$index+1]" ng-click=check() id="{{matchedIngredients[0][$index+1]}}"><label for="{{matchedIngredients[0][$index + 1]}}">{{matchedIngredients[0][$index + 1]}}</label></div>
   <div class="col-xs-2" id='singleColumn' ng-show="matchedIngredients[0][$index+2] != null"><input type="checkbox" checklist-model="selectedIngredients.ingredients" checklist-value="matchedIngredients[0][$index+2]" ng-click=check() id="{{matchedIngredients[0][$index+2]}}"><label for="{{matchedIngredients[0][$index + 2]}}">{{matchedIngredients[0][$index + 2]}}</label></div>
   <div class="col-xs-2" id='singleColumn' ng-show="matchedIngredients[0][$index+3] != null"><input type="checkbox" checklist-model="selectedIngredients.ingredients" checklist-value="matchedIngredients[0][$index+3]" ng-click=check() id="{{matchedIngredients[0][$index+3]}}" ><label for="{{matchedIngredients[0][$index + 3]}}">{{matchedIngredients[0][$index + 3]}}</label></div>
   <div class="col-xs-2" id='singleColumn' ng-show="matchedIngredients[0][$index+4] != null"><input type="checkbox" checklist-model="selectedIngredients.ingredients" checklist-value="matchedIngredients[0][$index+4]" ng-click=check() id="{{matchedIngredients[0][$index+4]}}" ><label for="{{matchedIngredients[0][$index + 4]}}">{{matchedIngredients[0][$index + 4]}}</label></div>
-  <div class="col-xs-2"></div>
+  <div class="col-xs-1" id='singleColumn'></div>
 
   <!-- <div ng-hide="myvar == null"></div> instead of <div ng-show="myvar != null"></div> -->
 
