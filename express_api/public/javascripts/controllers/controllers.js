@@ -19,6 +19,9 @@ app.controller('IngredientController', ['$scope', '$http', 'getIngredients', 'fo
       if(payload.data[ingredientSearched]){
         $scope.matchedIngredients.push(payload.data[ingredientSearched]);
       }
+      else{
+        alert("Ingredient not found, please try again!");
+      }
       return $scope.ingredients = payload.data;
     })
 
